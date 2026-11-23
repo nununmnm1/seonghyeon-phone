@@ -100,7 +100,7 @@ img{-webkit-user-drag:none}
 .badge{position:absolute;top:-6px;right:1px;background:#ff3b30;color:#fff;font-size:13px;min-width:22px;height:22px;border-radius:11px;display:flex;align-items:center;justify-content:center;padding:0 6px;font-weight:500;z-index:2}
 .wd{grid-column:span 2;width:158px;height:158px;border-radius:22px;padding:14px;color:#fff;cursor:pointer;position:relative;overflow:hidden}
 .wd-d{background:linear-gradient(160deg,#90b8e0,#4a6fa5)}
-.wd-d .t{font-size:12px;opacity:.9}.wd-d .n{font-size:40px;font-weight:700;margin-top:18px;letter-spacing:-1px}.wd-d .s{font-size:12px;opacity:.85;margin-top:4px}
+.wd-d{display:flex;flex-direction:column;justify-content:center;align-items:center}.wd-d .n{font-size:42px;font-weight:700;letter-spacing:-.04em;line-height:1}.wd-d .s{font-size:12px;opacity:.85;margin-top:4px}
 .wd-d .hearts{position:absolute;right:12px;top:12px;font-size:20px}
 .wd-c{background:#fff;color:#000}
 .wd-c .dw{color:#ff3b30;font-size:12px;font-weight:600}.wd-c .dn{font-size:34px;font-weight:300;line-height:1.1}
@@ -1171,7 +1171,7 @@ function unlock(dest){if(!locked||busy)return;
 
 V.home=()=>`<div class="view home" data-sb="light"><div class="wall" style="${bgStyle('P02')}"></div>
 <div class="grid">
- <div class="wd wd-d" onclick="toast('2026.05.02 부터 💙')"><div class="hearts">💙</div><div class="t">건호 🐬 그리고 나</div><div class="n">D+206</div><div class="s">2026. 05. 02 ~</div><span class="lbl" style="color:#fff">D-day</span></div>
+ <div class="wd wd-d"><div class="n">D+206</div><div class="s">2026. 05. 02 ~</div></div>
  <div class="wd wd-c" data-app="cal" onclick="launch('cal',23)"><div class="dw">월요일</div><div class="dn">23</div><div class="wev">졸작 피드백<small>오전 11:00</small></div><div class="wev b">합주 · B2<small>오후 6:00</small></div><span class="lbl" style="color:#fff">캘린더</span></div>
  ${appI('kakao','카카오톡','kk-chats','',2)}${appI('insta','Instagram','ig-home','',2)}${appI('et','에브리타임','et-home','',1)}${appI('notes','메모','notes')}
  ${appI('photos','사진','photos','lib')}${appI('cal','캘린더','cal',23)}${appI('voice','음성 메모','voice')}${appI('clock','시계','clock')}
