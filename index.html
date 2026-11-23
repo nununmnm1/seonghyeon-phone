@@ -705,7 +705,7 @@ gunho:{name:'건호',av:'P04',pin:true,unread:1,m:[
 ['me','민준이는 오늘 없어','오전 9:51'],
 ['h','오케이 ㅎㅎ','오전 9:51'],
 ['h','아 그리고 내 회색 후드 성현이 집에 있지?','오전 10:31']]},
-band:{name:'합주 🎸 밤산책',cnt:4,av:'P34',m:[
+band:{name:'합주 밤산책',cnt:4,av:'P34',m:[
 ['d','2026년 11월 23일 월요일'],
 ['태오','오늘 6시 B2 합주실 잡음','오전 8:12'],
 ['유나','넵넵','오전 8:30'],
@@ -743,7 +743,7 @@ minjun:{name:'김민준',av:'P33',unread:1,m:[
 ['김민준','낭만 미쳤네 진짜','오후 11:10'],
 ['me','그리고 건호가 셋이 밥 먹는 거 좋대','오후 11:30'],['me','돈까스 먹고 싶대','오후 11:30'],
 ['김민준','ㅋㅋㅋㅋ 사겠습니다 사겠습니다','오후 11:31']]},
-dept:{name:'24학번 실용음악과 🎵',cnt:38,av:'#d9c7f0|🎵',m:[
+dept:{name:'24학번 실용음악과',cnt:38,av:'#d9c7f0|🎵',m:[
 ['d','2026년 11월 22일 일요일'],
 ['과대 박서진','📢 12/5(토) 정기공연 리허설 공지\n12/3(목) 18시 대강당\n팀별 셋리스트 11/25까지 제출해 주세요!','오후 3:00'],
 ['이하은','넵!','오후 3:02'],
@@ -1217,7 +1217,7 @@ ${[['김민준','P33','실음과 보컬 🎤 · 1학년 때부터 친구'],['엄
 </div>${ktabs('f')}</div>`;
 V['kk-chats']=()=>`<div class="view kk"><div class="khead"><h1>채팅</h1><div class="icons">🔍 💬⁺ ⚙️</div></div><div class="scroll">
 ${KORDER.map(([id,tm])=>{const c=KK[id];const last=c.m[c.m.length-1][1];const prev=last[0]==='#'?'사진을 보냈습니다.':last[0]==='@'?'이모티콘':last[0]==='%'?'파일':last;
- return `<div class="kli" onclick="go('kk-chat','${id}')"><div class="sq">${av(c.av,48)}</div><div class="kn"><b>${c.name}${c.cnt?`<em>${c.cnt}</em>`:''}${c.pin?'<span class="pin">📌</span>':''}</b><p>${prev.split('\n')[0]}</p></div><div class="km">${tm}${c.unread?`<i>${c.unread}</i>`:''}</div></div>`}).join('')}
+ return `<div class="kli" onclick="go('kk-chat','${id}')"><div class="sq">${av(c.av,48)}</div><div class="kn"><b>${c.name}${c.cnt?`<em>${c.cnt}</em>`:''}</b><p>${prev.split('\n')[0]}</p></div><div class="km">${tm}${c.unread?`<i>${c.unread}</i>`:''}</div></div>`}).join('')}
 </div>${ktabs('c')}</div>`;
 function kkMsgs(ch){let o='',prev=null;const L=ch.m;
  L.forEach((m,i)=>{const [w,c,t]=m;
