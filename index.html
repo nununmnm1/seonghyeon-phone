@@ -1166,8 +1166,8 @@ function bindLock(){const el=screen.firstElementChild,lk=el.querySelector('.lk')
   el.addEventListener('pointerup',e=>{if(y0===null)return;const n=e.target.closest('.noti');y0=null;
     lk.animate([{transform:lk.style.transform,opacity:lk.style.opacity||1},{transform:'none',opacity:1}],{duration:300,easing:EASE});lk.style.transform='';lk.style.opacity='';
     unlock(n?n.dataset.go:null)});}
-function unlock(dest){if(document.querySelector('.pass'))return;
-  passcode('암호 입력',()=>{locked=false;stack=[];if(dest){const [v,...a]=dest.split('|');stack=[{v,a:a.length>1?a:a[0]}]}render('unlock')},{lock:true})}
+function unlock(dest){if(!locked||busy)return;
+  locked=false;stack=[];if(dest){const [v,...a]=dest.split('|');stack=[{v,a:a.length>1?a:a[0]}]}render('unlock')}
 
 V.home=()=>`<div class="view home" data-sb="light"><div class="wall" style="${bgStyle('P02')}"></div>
 <div class="grid">
