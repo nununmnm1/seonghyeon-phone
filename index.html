@@ -66,7 +66,10 @@ img{-webkit-user-drag:none}
 .noti .nb{flex:1;min-width:0}.noti .nh{display:flex;justify-content:space-between;font-size:13px}.noti .nh b{font-weight:600}.noti .nh span{opacity:.5;font-size:12px}
 .noti .nt{font-size:14px;line-height:1.3;margin-top:1px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .lkbot{display:flex;justify-content:space-between;width:100%;padding:0 46px 40px;align-items:center}
-.lkbot .c{width:50px;height:50px;border-radius:50%;background:rgba(0,0,0,.35);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;font-size:20px}
+.lkbot .c{width:50px;height:50px;border-radius:50%;background:rgba(40,40,40,.32);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .2s,color .2s,transform .15s}
+.lkbot .c:active{transform:scale(1.12)}
+.lkbot .c .sw{fill:rgba(40,40,40,.55)}
+.lkbot .c.on{background:#fff;color:#1c1c1e}.lkbot .c.on .sw{fill:#fff}
 .swipe{position:absolute;bottom:14px;left:0;right:0;text-align:center;font-size:13px;opacity:.75;z-index:3;animation:pulse 2s infinite}
 @keyframes pulse{50%{opacity:.35}}
 
@@ -1156,7 +1159,7 @@ function appI(key,label,v,a,badge){const arg=a===undefined||a===''?'':(typeof a=
 const V={};
 V.lock=()=>`<div class="view lock" data-sb="light"><div class="wall" style="${bgStyle('P01')}"></div>
 <div class="lk"><div class="date">11월 23일 월요일</div><div class="time">10:47</div>
-<div class="notis"></div><div class="lkbot"><div class="c">🔦</div><div class="c">📷</div></div></div><div class="swipe">위로 쓸어올리거나 눌러서 잠금 해제</div></div>`;
+<div class="notis"></div><div class="lkbot"><button class="c" onpointerdown="event.stopPropagation()" onpointerup="event.stopPropagation();this.classList.toggle('on')"><svg width="20" height="26" viewBox="0 0 20 26"><path d="M3 1.5h14v3.2l-3.2 5.3v13.2a1.8 1.8 0 0 1-1.8 1.8H8a1.8 1.8 0 0 1-1.8-1.8V10L3 4.7z" fill="currentColor"/><rect x="8.9" y="13" width="2.2" height="4.6" rx="1.1" class="sw"/></svg></button><button class="c" onpointerdown="event.stopPropagation()" onpointerup="event.stopPropagation()"><svg width="26" height="21" viewBox="0 0 26 21"><path d="M3.2 4.2h3.9l1.6-2.4c.3-.5.9-.8 1.5-.8h5.6c.6 0 1.2.3 1.5.8l1.6 2.4h3.9A2.2 2.2 0 0 1 25 6.4v11.4a2.2 2.2 0 0 1-2.2 2.2H3.2A2.2 2.2 0 0 1 1 17.8V6.4a2.2 2.2 0 0 1 2.2-2.2z" fill="currentColor"/><circle cx="13" cy="11.6" r="4.6" class="sw"/><circle cx="13" cy="11.6" r="3.1" fill="currentColor"/></svg></button></div></div><div class="swipe">위로 쓸어올려 열기</div></div>`;
 function bindLock(){const el=screen.firstElementChild,lk=el.querySelector('.lk');let y0=null,s=1;
   el.addEventListener('pointerdown',e=>{y0=e.clientY;s=SC()});
   el.addEventListener('pointermove',e=>{if(y0===null)return;const dy=Math.min(0,(e.clientY-y0)/s);lk.style.transform=`translateY(${dy*.5}px)`;lk.style.opacity=1+dy/500});
